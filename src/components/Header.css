@@ -1,0 +1,63 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.Logo {
+  height: 1.3rem;
+  margin-bottom: 0.3rem;
+  align-self: flex-start;
+}
+
+.FiltersButton {
+  display: flex;
+  align-items: center;
+  height: 3.2rem;
+  padding: 0;
+  background: #FFFFFF;
+  border: none;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  cursor: pointer;
+  font-family: 'Mulish',
+    sans-serif;
+  font-size: 14px;
+  align-self: center;
+  margin: 1rem 0;
+}
+
+.FiltersButton-location,
+.FiltersButton-guests,
+.FiltersButton-search {
+  padding: 0 1rem;
+}
+
+.FiltersButton-line {
+  width: 2px;
+  height: inherit;
+  background-color: #F2F2F2;
+}
+
+.FiltersButton-guests {
+  color: #BDBDBD;
+}
+
+.FiltersButton-search {
+  color: #EB5757;
+}
+
+@media only screen and (min-width: 600px) {
+  .Header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .FiltersButton {
+    margin: 0;
+  }
+
+  .Logo {
+    align-self: center;
+  }
+}
