@@ -1,15 +1,13 @@
 @import-normalize;
 
 .App {
-  /* padding: 1rem 2.5rem; */
   font-family: 'Montserrat',
     sans-serif;
-}
+  color: #333333;
 
-/************************************/
-/* FOOTER */
-.Footer {
-  background-color: lightcoral;
+  /* For the footer */
+  position: relative;
+  min-height: 95vh;
 }
 
 @media only screen and (min-width: 600px) {

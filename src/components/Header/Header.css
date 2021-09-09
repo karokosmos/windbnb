@@ -1,0 +1,23 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.Logo {
+  height: 1.3rem;
+  margin-bottom: 0.3rem;
+  align-self: flex-start;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .Header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .Logo {
+    align-self: center;
+  }
+}

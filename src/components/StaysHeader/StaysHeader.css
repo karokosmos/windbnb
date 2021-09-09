@@ -1,0 +1,14 @@
+.StaysHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.StaysHeader__heading {
+  font-size: 1.5rem;
+}
+
+.StaysHeader__count {
+  font-size: 0.9rem;
+}

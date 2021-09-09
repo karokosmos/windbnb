@@ -1,0 +1,47 @@
+.StayDetails__info {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.StayDetails__type,
+.StayDetails__beds {
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.StayDetails__beds::before {
+  content: ".";
+  margin: 0 3px;
+}
+
+.StayDetails__rating-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.StayDetails__rating {
+  font-size: 0.85rem;
+}
+
+.StayDetails__star {
+  color: #EB5757;
+  font-size: 1.3rem;
+  margin-right: 3px;
+}
+
+.StayDetails__super-host {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #4F4F4F;
+  border: 1px solid #4F4F4F;
+  border-radius: 12px;
+  padding: 5px 8px;
+  margin-right: 8px;
+}
+
+.StayDetails__title {
+  margin-top: 0;
+}

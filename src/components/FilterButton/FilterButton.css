@@ -1,15 +1,3 @@
-.Header {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0;
-}
-
-.Logo {
-  height: 1.3rem;
-  margin-bottom: 0.3rem;
-  align-self: flex-start;
-}
-
 .FiltersButton {
   display: flex;
   align-items: center;
@@ -27,37 +15,28 @@
   margin: 1rem 0;
 }
 
-.FiltersButton-location,
-.FiltersButton-guests,
-.FiltersButton-search {
+.FiltersButton__location,
+.FiltersButton__guests,
+.FiltersButton__search {
   padding: 0 1rem;
 }
 
-.FiltersButton-line {
+.FiltersButton__line {
   width: 2px;
   height: inherit;
   background-color: #F2F2F2;
 }
 
-.FiltersButton-guests {
+.FiltersButton__guests {
   color: #BDBDBD;
 }
 
-.FiltersButton-search {
+.FiltersButton__search {
   color: #EB5757;
 }
 
 @media only screen and (min-width: 600px) {
-  .Header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   .FiltersButton {
     margin: 0;
-  }
-
-  .Logo {
-    align-self: center;
   }
 }

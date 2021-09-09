@@ -1,0 +1,78 @@
+.FilterDrawer__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  z-index: 100;
+  transition: height 2s ease-in-out;
+}
+
+.FilterDrawer__filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 2px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 1.1rem;
+  margin: 3rem 1.5rem 1.5rem 1.5rem;
+  background: #F2F2F2;
+}
+
+.FilterDrawer__filter-wrap {
+  background: #fff;
+}
+
+.FilterDrawer__filter-wrap:first-child {
+  border-top-left-radius: 1.1rem;
+  border-bottom-left-radius: 1.1rem;
+}
+
+.FilterDrawer__filter {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 0.7rem 1.4rem;
+  border-radius: 1.1rem;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-family: 'Mulish',
+    sans-serif;
+  background: #fff;
+}
+
+.FilterDrawer__filter>span {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: .5rem;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.FilterDrawer__filter.open {
+  border: 1px solid #333333;
+}
+
+.FilterDrawer__filter--guests.zero {
+  color: #BDBDBD;
+}
+
+.FilterDrawer__options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 1.5rem 3rem 1.5rem;
+}
+
+.FilterDrawer__options-container {
+  border: solid 1px red;
+  padding: 0 1.4rem;
+}
+
+.FilterDrawer__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(79, 79, 79, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+}
