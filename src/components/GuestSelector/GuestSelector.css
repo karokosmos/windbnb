@@ -1,0 +1,44 @@
+.GuestSelector__selector {
+  font-family: 'Mulish',
+    sans-serif;
+  color: #333333;
+  font-size: 14px;
+  margin-bottom: 2rem;
+}
+
+.GuestSelector__group {
+  margin-bottom: 0;
+}
+
+.GuestSelector__age {
+  color: #BDBDBD;
+  margin-top: 3px;
+}
+
+.GuestSelector__button {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #828282;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.GuestSelector__icon {
+  font-size: 1rem;
+  color: #828282;
+}
+
+.GuestSelector__count {
+  display: flex;
+  align-items: center;
+}
+
+.GuestSelector__count>span {
+  padding: 0 0.6rem;
+  font-weight: 700;
+  color: #333333;
+  font-size: 14px;
+}

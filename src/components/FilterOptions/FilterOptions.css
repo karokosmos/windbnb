@@ -1,0 +1,36 @@
+.FilterOptions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 1.5rem;
+}
+
+.FilterOptions__container {
+  /* border: solid 1px red; */
+  padding: 0 1.4rem;
+}
+
+.FilterOptions__locations {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.LocationButton {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 1rem 0;
+  text-align: left;
+  font-family: 'Mulish',
+    sans-serif;
+  color: #4F4F4F;
+}
+
+.LocationButton__icon {
+  color: #4F4F4F;
+  margin-right: 3px;
+}
+
+.LocationButton:hover {
+  color: #000000;
+}

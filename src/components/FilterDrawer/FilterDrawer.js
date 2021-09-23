@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './FilterDrawer.css'
+import Filters from '../Filters/Filters'
+import FilterOptions from '../FilterOptions/FilterOptions'
 
 const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
   const [location, setLocation] = useState(`${filters.city}, ${filters.country}`)
@@ -10,13 +12,24 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
   const locations = ['Helsinki, Finland', 'Turku, Finland', 'Oulu, Finland', 'Vaasa, Finland']
 
   const handleLocationChange = (event) => {
-    const selectedLocation = event.target.textContent
+    const selectedLocation = event.target.closest('.LocationButton__location').textContent
     const city = selectedLocation.split(', ')[0]
     const country = selectedLocation.split(', ')[1]
 
     setLocation(selectedLocation)
     setFilters({ ...filters, city, country })
     setShowFilters(false)
+  }
+
+  const handleGuestChange = (group, count) => {
+    if (group === 'Adults') {
+      setGuests({ ...guests, adults: count })
+    }
+    if (group === 'Children') {
+      setGuests({ ...guests, children: count })
+    }
+
+    setFilters({ ...filters, guests: guests })
   }
 
   const toggleLocationFilter = (e) => {
@@ -27,9 +40,9 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
       : button.classList.add('open')
 
     if (showGuests) {
-      setShowGuests(false)
-      const guestsButton = document.querySelector('.FilterDrawer__filter--guests')
+      const guestsButton = document.querySelector('.Filters__button--guests')
       guestsButton.classList.remove('open')
+      setShowGuests(false)
     }
 
     setShowLocations(!showLocations)
@@ -42,14 +55,10 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
       ? button.classList.remove('open')
       : button.classList.add('open')
 
-    guests === null
-      ? button.classList.add('zero')
-      : button.classList.remove('zero')
-
     if (showLocations) {
-      setShowLocations(false)
-      const locationsButton = document.querySelector('.FilterDrawer__filter--location')
+      const locationsButton = document.querySelector('.Filters__button--location')
       locationsButton.classList.remove('open')
+      setShowLocations(false)
     }
 
     setShowGuests(!showGuests)
@@ -58,51 +67,22 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
   return (
     <div className="FilterDrawer">
       <div className="FilterDrawer__container">
-        <div className="FilterDrawer__filters">
-          <div className="FilterDrawer__filter-wrap">
-            <button className="FilterDrawer__filter FilterDrawer__filter--location" onClick={(e) => toggleLocationFilter(e)}>
-              <span>Location</span>
-              {location}
-            </button>
-          </div>
-          <div className="FilterDrawer__filter-wrap">
-            <button className="FilterDrawer__filter FilterDrawer__filter--guests" onClick={(e) => toggleGuestsFilter(e)}>
-              <span>Guests</span>
-              {guests === null ? 'Add guests' : guests}
-            </button>
-          </div>
-        </div>
-
+        <Filters
+          location={location}
+          guests={guests}
+          toggleGuestsFilter={toggleGuestsFilter}
+          toggleLocationFilter={toggleLocationFilter} />
         {(showLocations || showGuests) &&
-          <div className="FilterDrawer__options">
-            <div className="FilterDrawer__options-container">
-              {showLocations &&
-                <div className="FilterDrawer__locations">
-                  {locations.map(location =>
-                    <LocationButton location={location} handleClick={handleLocationChange} />
-                  )}
-                </div>}
-            </div>
-            <div className="FilterDrawer__options-container">
-              {showGuests &&
-                <div>
-                  guests
-                </div>}
-            </div>
-            <div className="FilterDrawer__options-container"></div>
-          </div>}
-
+          <FilterOptions
+            locations={locations}
+            handleLocationChange={handleLocationChange}
+            handleGuestChange={handleGuestChange}
+            showGuests={showGuests}
+            showLocations={showLocations}
+          />}
       </div>
       <div className="FilterDrawer__overlay"></div>
     </div>
-  )
-}
-
-const LocationButton = ({ location, handleClick }) => {
-  return (
-    <button className="LocationButton" onClick={handleClick}>
-      {location}
-    </button>
   )
 }
 

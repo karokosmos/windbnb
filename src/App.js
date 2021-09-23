@@ -11,7 +11,10 @@ const App = () => {
   const [filters, setFilters] = useState({
     city: 'Helsinki',
     country: 'Finland',
-    guests: null
+    guests: {
+      adults: 0,
+      children: 0
+    }
   })
 
   const filteredStays = staysData.filter(stay => stay.city === filters.city)
@@ -22,8 +25,8 @@ const App = () => {
         <FilterDrawer
           filters={filters}
           setFilters={setFilters}
-          setShowFilters={setShowFilters} />
-      }
+          setShowFilters={setShowFilters}
+        />}
       <Header
         filters={filters}
         openFilterDrawer={() => setShowFilters(true)}
@@ -47,6 +50,8 @@ App
   - Logo
   - FilterButton
   - FilterDrawer
+    - Filters
+    - FilterOptions
 - StaysContainer
   - StaysHeader
   - StaysList

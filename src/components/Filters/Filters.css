@@ -1,0 +1,47 @@
+.Filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 2px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 1.1rem;
+  margin: 3rem 1.5rem 1.5rem 1.5rem;
+  background: #F2F2F2;
+}
+
+.Filters__wrap {
+  background: #fff;
+}
+
+.Filters__wrap:first-child {
+  border-top-left-radius: 1.1rem;
+  border-bottom-left-radius: 1.1rem;
+}
+
+.Filters__button {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 0.7rem 1.4rem;
+  border-radius: 1.1rem;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-family: 'Mulish',
+    sans-serif;
+  background: #fff;
+}
+
+.Filters__button>span {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: .5rem;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.Filters__button.open {
+  border: 1px solid #333333;
+}
+
+.Filters__button--guests.zero {
+  color: #BDBDBD;
+}
