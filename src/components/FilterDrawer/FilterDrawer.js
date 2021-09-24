@@ -9,16 +9,10 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
   const [showLocations, setShowLocations] = useState(false)
   const [showGuests, setShowGuests] = useState(false)
 
-  const locations = ['Helsinki, Finland', 'Turku, Finland', 'Oulu, Finland', 'Vaasa, Finland']
-
   const handleLocationChange = (event) => {
+    if (!event.target.closest('.LocationButton__location')) return
     const selectedLocation = event.target.closest('.LocationButton__location').textContent
-    const city = selectedLocation.split(', ')[0]
-    const country = selectedLocation.split(', ')[1]
-
     setLocation(selectedLocation)
-    setFilters({ ...filters, city, country })
-    setShowFilters(false)
   }
 
   const handleGuestChange = (group, count) => {
@@ -28,8 +22,6 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
     if (group === 'Children') {
       setGuests({ ...guests, children: count })
     }
-
-    setFilters({ ...filters, guests: guests })
   }
 
   const toggleLocationFilter = (e) => {
@@ -64,6 +56,13 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
     setShowGuests(!showGuests)
   }
 
+  const handleSearch = () => {
+    const city = location.split(', ')[0]
+    const country = location.split(', ')[1]
+    setShowFilters(false)
+    setFilters({ city, country, guests })
+  }
+
   return (
     <div className="FilterDrawer">
       <div className="FilterDrawer__container">
@@ -71,14 +70,15 @@ const FilterDrawer = ({ filters, setFilters, setShowFilters }) => {
           location={location}
           guests={guests}
           toggleGuestsFilter={toggleGuestsFilter}
-          toggleLocationFilter={toggleLocationFilter} />
+          toggleLocationFilter={toggleLocationFilter}
+          handleSearch={handleSearch} />
         {(showLocations || showGuests) &&
           <FilterOptions
-            locations={locations}
             handleLocationChange={handleLocationChange}
             handleGuestChange={handleGuestChange}
             showGuests={showGuests}
             showLocations={showLocations}
+            guests={guests}
           />}
       </div>
       <div className="FilterDrawer__overlay"></div>

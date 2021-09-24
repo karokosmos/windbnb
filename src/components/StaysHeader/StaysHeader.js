@@ -7,7 +7,7 @@ const StaysHeader = ({ country, staysCount }) => (
       Stays in {country}
     </h1>
     <p className="StaysHeader__count">
-      {staysCount} stays
+      {staysCount !== 1 ? `${staysCount} stays` : `${staysCount} stay`}
     </p>
   </div>
 )

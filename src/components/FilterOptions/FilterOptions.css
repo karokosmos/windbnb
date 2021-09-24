@@ -1,7 +1,7 @@
 .FilterOptions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 1.5rem;
+  margin: 0 3rem;
 }
 
 .FilterOptions__container {
@@ -33,4 +33,12 @@
 
 .LocationButton:hover {
   color: #000000;
+}
+
+@media only screen and (max-width: 600px) {
+  .FilterOptions {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    margin: 1.5rem 3rem 6rem 3rem;
+  }
 }

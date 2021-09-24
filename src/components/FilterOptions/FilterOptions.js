@@ -16,7 +16,8 @@ const LocationButton = ({ location, handleClick }) => {
   )
 }
 
-const FilterOptions = ({ showLocations, showGuests, locations, handleLocationChange, handleGuestChange }) => {
+const FilterOptions = ({ showLocations, showGuests, handleLocationChange, handleGuestChange, guests }) => {
+  const locations = ['Helsinki, Finland', 'Turku, Finland', 'Oulu, Finland', 'Vaasa, Finland']
 
   if (showLocations) {
     return (
@@ -45,11 +46,13 @@ const FilterOptions = ({ showLocations, showGuests, locations, handleLocationCha
               group="Adults"
               ageInfo="Age 13 or above"
               handleGuestChange={handleGuestChange}
+              guests={guests.adults}
             />
             <GuestSelector
               group="Children"
               ageInfo="Ages 2-12"
               handleGuestChange={handleGuestChange}
+              guests={guests.children}
             />
           </div>}
       </div>

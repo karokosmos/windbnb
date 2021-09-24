@@ -17,7 +17,9 @@ const App = () => {
     }
   })
 
-  const filteredStays = staysData.filter(stay => stay.city === filters.city)
+  const totalGuests = filters.guests.adults + filters.guests.children
+
+  const filteredStays = staysData.filter(stay => stay.city === filters.city && stay.maxGuests >= totalGuests)
 
   return (
     <div className="App">
@@ -41,21 +43,3 @@ const App = () => {
 }
 
 export default App
-
-/*
-COMPONENTS PLAN
-
-App
-- Header
-  - Logo
-  - FilterButton
-  - FilterDrawer
-    - Filters
-    - FilterOptions
-- StaysContainer
-  - StaysHeader
-  - StaysList
-    - Stay
-      - StayDetails
-  - Footer
-*/

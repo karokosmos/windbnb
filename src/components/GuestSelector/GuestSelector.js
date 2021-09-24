@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './GuestSelector.css'
 
-const GuestSelector = ({ group, ageInfo, handleGuestChange }) => {
-  const [count, setCount] = useState(0)
+const GuestSelector = ({ group, ageInfo, guests, handleGuestChange }) => {
+  const [count, setCount] = useState(guests)
 
   const increment = () => {
     const newCount = count + 1

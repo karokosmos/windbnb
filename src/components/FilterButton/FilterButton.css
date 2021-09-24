@@ -27,7 +27,7 @@
   background-color: #F2F2F2;
 }
 
-.FiltersButton__guests {
+.FiltersButton__guests.zero {
   color: #BDBDBD;
 }
 
